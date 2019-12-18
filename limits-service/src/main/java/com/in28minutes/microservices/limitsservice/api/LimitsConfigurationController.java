@@ -15,6 +15,6 @@ public class LimitsConfigurationController {
 
     @GetMapping("/limits")
     public Mono<LimitConfiguration> retrieveLimitsFromConfiguration() {
-        return Mono.just(new LimitConfiguration(99, 1));
+        return Mono.just(new LimitConfiguration(configuration.getMaximum(), configuration.getMinimum()));
     }
 }
